@@ -1,0 +1,29 @@
+.boton-amarillo{
+    @include boton($amarillo, inline-block);
+}
+
+.boton-amarillo-block{
+    @include boton($amarillo, block);
+}
+
+.boton-verde{
+    @include boton($verde, inline-block);
+}
+
+.alinear-derecha{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.boton-rojo-block{
+    @include boton($rojo, block);
+    width: 100%;
+}
+
+.boton-azul-block{
+    @include boton($azul, block);
+}
+
+.boton-chico{
+    padding: 0.08rem;
+}

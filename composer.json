@@ -1,0 +1,20 @@
+{
+    "name": "clayn/bienes-raices",
+    "description": "proyecto bienesraices",
+    "authors": [
+        {
+            "name": "petriz25",
+            "email": "107162071+petriz25@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7"
+    }, 
+    "autoload": {
+        "psr-4": {
+            "Model\\" : "./models",
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers"
+        }
+    }
+}
