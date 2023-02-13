@@ -4,10 +4,8 @@ namespace Controllers;
 use MVC\Router;
 
 class PropiedadController{
-    public static function index(){
-        echo "Desde el admin";
-        // $router->render('/propiedades/admin');
-        // Router $router
+    public static function index(Router $router){
+        $router->render('propiedades/admin');
     }
 
     public static function crear(){

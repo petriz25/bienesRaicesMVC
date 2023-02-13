@@ -15,10 +15,9 @@ class Router{
         $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
-        debuguear($_SERVER);
-
         if($metodo === 'GET'){
             $fn=$this->rutasGet[$urlActual] ?? null;
+            //debuguear($this->rutasGet[$urlActual]);
         }
 
         if($fn){
@@ -31,12 +30,11 @@ class Router{
 
     //Muestra una vista
     public function render($view){
-
         ob_start();
         include __DIR__ . "views/$view";
         $contenido = ob_get_clean();
 
-        include __DIR__ . "views/layout.php";
+        include __DIR__ . "/views/layout.php";
     }
 
 }
