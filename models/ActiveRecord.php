@@ -43,11 +43,11 @@ class ActiveRecord{
     //Mensaje de exito, reedirecciona a la pestaña de crear
     if($resultado){
         echo "<script> alert('Guardado exitosamente');
-        location.href = '../propiedades/crear.php';
+        location.href = '/propiedades/crear';
         </script>";
     }else{
         echo "<script> alert('Error al guardar');
-        location.href = '../propiedades/crear.php';
+        location.href = '/propiedades/crear';
         </script>";
     }
 }

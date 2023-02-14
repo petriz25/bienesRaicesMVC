@@ -10,14 +10,20 @@ class Router{
         $this->rutasGet[$url] = $fn;
     }
 
+    public function post($url, $fn){
+        $this->rutasPost[$url] = $fn;
+    }
+
     public function comprobarRutas()
     {
-        $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
+        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
         if($metodo === 'GET'){
             $fn=$this->rutasGet[$urlActual] ?? null;
             //debuguear($this->rutasGet[$urlActual]);
+        }else{
+            $fn=$this->rutasPost[$urlActual] ?? null;
         }
 
         if($fn){
@@ -29,10 +35,14 @@ class Router{
     }
 
     //Muestra una vista
-    public function render($view){
-        ob_start();
-        include __DIR__ . "views/$view";
-        $contenido = ob_get_clean();
+    public function render($view, $datos = []){
+        foreach($datos as $key=>$value){
+            $$key = $value;
+        }
+
+        ob_start(); //Almacenamiento en memoria por un momento
+        include __DIR__ . "/views/$view.php";
+        $contenido = ob_get_clean(); //Limpia el bufer
 
         include __DIR__ . "/views/layout.php";
     }
