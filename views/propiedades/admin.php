@@ -27,7 +27,7 @@
                 <td> <img src="../imagenes/<?php echo $propiedad->imagen;  ?>" class="imagen-tabla"></td>
                 <td>
                 <a href="/propiedades/actualizar?id=<?php echo $propiedad->id; ?>" class="boton-azul-block boton-chico">Actualizar</a>
-                    <form method="POST" class="w-100">
+                    <form method="POST" class="w-100" action="/propiedades/eliminar">
                         <input type="hidden" name="id" value=<?php echo $propiedad->id;?> >
                     <input type="submit" class="boton-rojo-block boton-chico" value="Eliminar">
                     </form>

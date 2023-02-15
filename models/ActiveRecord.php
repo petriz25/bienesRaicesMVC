@@ -69,11 +69,11 @@ class ActiveRecord{
     $resultado = self::$db->query($query);
         if($resultado){
             echo "<script> alert('Actualizado exitosamente');
-            location.href = '../index.php';
+            location.href = '/admin';
             </script>";
         }else{
             echo "<script> alert('Error al actualizar');
-            location.href = '../index.php';
+            location.href = '/admin';
             </script>";
         }
     }
@@ -87,11 +87,11 @@ class ActiveRecord{
         if($resultado){
             $this->eliminarImagen();
             echo "<script> alert('Eliminado exitosamente');
-            location.href = 'index.php';
+            location.href = '/admin';
             </script>";
         }else{
             echo "<script> alert('Error al eliminar');
-            location.href = 'index.php';
+            location.href = '/admin';
             </script>";
         }
     }
